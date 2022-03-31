@@ -8,7 +8,11 @@ Goals:
 4. Work in small groups.
 5. Implement a design utilizing structures such as classes and interfaces.
 6. Employ Java coding standards.
+
+
 The Problem
+
+
 You need to use the FSM approach to model, design, and implement a train that goes in a loop around the terminals of an airport. Each terminal has a station at which the train stops. As you will see, the number of stations is irrelevant. The system works as follows.
 After starting from a station, the train accelerates for 6 seconds, before it attains full speed. At some point, perhaps after attaining full speed, the train keeps running until it gets a signal that it is approaching a station. At that time, it decelerates. The signal that the train is approaching a station might come even before the 6-second acceleration period ends; if that happens, the train starts decelerating.
 At some point after decelerating, the train receives a signal that it has arrived at a station. The train immediately stops.
