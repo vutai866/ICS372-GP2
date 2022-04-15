@@ -1,21 +1,36 @@
 package states;
 
-public class DoorsOpening  extends TrainState{
+/**
+ * Represents the door opening state
+ *
+ */
+public class DoorsOpening extends TrainState {
 	private static DoorsOpening instance;
+
+	/**
+	 * Private constructor for the singleton pattern
+	 */
+	private DoorsOpening() {
+		instance = this;
+	}
+
 	public static DoorsOpening getInstance() {
+		if (instance == null) {
+			instance = new DoorsOpening();
+		}
 		return instance;
 	}
 
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
-		
+//		some code
+
 	}
 
 	@Override
 	public void exit() {
-		// TODO Auto-generated method stub
-		
+		//some code
+
 	}
 
 }
