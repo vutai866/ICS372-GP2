@@ -1,15 +1,15 @@
 package timer;
 
-public class Notifiable {
+public interface Notifiable {
 
-    /**
-     * Process timer ticks
-     */
-    public void OnTimerTick(int timerValue);
+	/**
+	 * Process timer ticks
+	 */
+	public void OnTimerTick(int timerValue);
 
-    /**
-     * Process timer runs out event
-     */
-    public void OnTimerRunsOut();
+	/**
+	 * Process timer runs out event
+	 */
+	public void OnTimerRunsOut();
 
 }// end Notifiable

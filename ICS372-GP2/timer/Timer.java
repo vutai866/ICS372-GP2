@@ -27,7 +27,7 @@ public class Timer implements PropertyChangeListener{
      * @param
      */
     public void stop(){
-        Clock.getInstance().removeProtertyChangeListener(this);
+        Clock.getInstance().removePropertyChangeListener(this);
     }// end stop
 
     /**
@@ -44,7 +44,7 @@ public class Timer implements PropertyChangeListener{
     @Override
     public void propertyChange(PropertyChangeEvent arg0){
         if(--timeValue <= 0){
-            client.onTimerRunsOut();
+            client.OnTimerRunsOut();
             Clock.getInstance().removePropertyChangeListener(this);
         } else{
             client.OnTimerTick(timeValue);  
