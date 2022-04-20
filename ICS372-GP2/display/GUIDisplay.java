@@ -96,4 +96,10 @@ public class GUIDisplay extends Application implements TrainDisplay {
 		doorStatus.setText("door obstructed");
 
 	}
+
+	@Override
+	public void showTimeLeft(int time) {
+		// TODO Auto-generated method stub
+		
+	}
 }

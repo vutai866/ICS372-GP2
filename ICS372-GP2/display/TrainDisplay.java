@@ -48,4 +48,8 @@ public interface TrainDisplay {
 	 */
 	public void showDoorObstruction();
 
+	/*
+	 * indicate remaining time.
+	 */
+	public void showTimeLeft(int time);
 }
