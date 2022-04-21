@@ -2,6 +2,11 @@ package states;
 
 public class Stopped extends TrainState  {
 	private static Stopped instance;
+	
+	private Stopped() {
+		instance = this;
+	}
+	
 	public static Stopped getInstance() {
 		// TODO Auto-generated method stub
 		return instance;
