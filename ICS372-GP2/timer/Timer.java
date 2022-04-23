@@ -44,10 +44,10 @@ public class Timer implements PropertyChangeListener{
     @Override
     public void propertyChange(PropertyChangeEvent arg0){
         if(--timeValue <= 0){
-            client.OnTimerRunsOut();
+            client.onTimerRunsOut();
             Clock.getInstance().removePropertyChangeListener(this);
         } else{
-            client.OnTimerTick(timeValue);  
+            client.onTimerTick(timeValue);  
         }// end else
     }
 }

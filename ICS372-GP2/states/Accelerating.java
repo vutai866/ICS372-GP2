@@ -1,8 +1,9 @@
 package states;
 
+import timer.Notifiable;
 import timer.Timer;
 
-public class Accelerating  extends TrainState {
+public class Accelerating  extends TrainState implements Notifiable {
 	private static Accelerating instance;
 	private Timer timer;
 	public static Accelerating getInstance() {
@@ -18,7 +19,7 @@ public class Accelerating  extends TrainState {
 	
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
+		timer = new Timer(this, 10);
 		
 	}
 	@Override
@@ -32,7 +33,7 @@ public class Accelerating  extends TrainState {
 	   */
 	  @Override
 	public void onTimerTick(int timerValue) {
-	    //TrainStateContext.getInstance().showTimeLeft(timerValue);
+	    TrainStateContext.getInstance().showTimeLeft(timerValue);
 	}
 
 	/**
@@ -43,4 +44,5 @@ public class Accelerating  extends TrainState {
 	  TrainStateContext.getInstance().showTimeLeft(0);
 	  TrainStateContext.getInstance().changeState(FullSpeed.getInstance());
 	}
+	 
 }
