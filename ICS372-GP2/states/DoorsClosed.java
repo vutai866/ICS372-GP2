@@ -1,11 +1,15 @@
 package states;
 
+import timer.Notifiable;
+import timer.Timer;
+
 /**
  * Represents the door closed state
  *
  */
-public class DoorsClosed extends TrainState {
+public class DoorsClosed extends TrainState implements Notifiable{
 	private static DoorsClosed instance;
+	private Timer timer;
 
 	/**
 	 * Private constructor for the singleton pattern
@@ -31,6 +35,23 @@ public class DoorsClosed extends TrainState {
 	public void exit() {
 		//TrainStateContext.getInstance().showDoorsOpened();
 
+	}
+	
+	/**
+	   * Process clock tick event
+	   */
+	  @Override
+	public void onTimerTick(int timerValue) {
+	    TrainStateContext.getInstance().showTimeLeft(timerValue);
+	}
+
+	/**
+	 * Process the timer runs out event
+	 */
+	 @Override
+	public void onTimerRunsOut() {
+	  TrainStateContext.getInstance().showTimeLeft(0);
+	  TrainStateContext.getInstance().changeState(Accelerating.getInstance());
 	}
 
 }

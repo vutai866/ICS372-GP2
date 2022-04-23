@@ -22,5 +22,22 @@ public class Stopped extends TrainState  {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	/**
+	   * Process clock tick event
+	   */
+	  @Override
+	public void onTimerTick(int timerValue) {
+	    TrainStateContext.getInstance().showTimeLeft(timerValue);
+	}
+
+	/**
+	 * Process the timer runs out event
+	 */
+	 @Override
+	public void onTimerRunsOut() {
+	  TrainStateContext.getInstance().showTimeLeft(0);
+	  TrainStateContext.getInstance().changeState(Stopped.getInstance());
+	}
 
 }
