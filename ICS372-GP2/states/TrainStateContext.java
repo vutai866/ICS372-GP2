@@ -1,37 +1,4 @@
-<<<<<<< HEAD
-package states;
 
-
-import display.TrainDisplay;
-
-public class TrainStateContext {
-	private TrainDisplay trainDisplay;
-	private TrainState currentState;
-	private static TrainStateContext instance;
-	
-	public TrainStateContext() {
-		instance = this;
-		currentState = Stopped.getInstance();
-	}
-	
-	public static TrainStateContext getInstance() {
-		if (instance == null) {
-			instance = new TrainStateContext();
-		}
-		return instance;
-	}
-	
-	public void showTimeLeft(int time) {
-		trainDisplay.showTimeLeft(time);
-	}
-
-	public void changeState(Object instance2) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-}
-=======
 package states;
 
 
@@ -72,7 +39,7 @@ public class TrainStateContext {
 	 * @param trainDisplay The current display object
 	 */
 	public void setDisplay(TrainDisplay trainDisplay) {
-		this.trainDisplay = trainDisplay
+		this.trainDisplay = trainDisplay;
 	}
 	
 	/**
@@ -89,7 +56,7 @@ public class TrainStateContext {
 	 * @param nextState The next state
 	 */
 	public void changeState(TrainState nextState) {
-		currentState.leave();
+		currentState.exit();
 		currentState = nextState;
 		currentState.enter();
 	}
@@ -165,7 +132,7 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showTrainAcceralting() {
-		display.showTrainAccelerating();
+		trainDisplay.showTrainAccelerating();
 	}
 	
 	/**
@@ -173,7 +140,7 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showTrainDecceralting() {
-		display.showTrainDeccelerating();
+		trainDisplay.showTrainDecelerating();
 	}
 	
 	/**
@@ -181,15 +148,15 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showTrainFullSpeed() {
-		display.showTrainFullSpeed();
+		trainDisplay.showTrainFullSpeed();
 	}
 	
 	/**
 	 * Invokes right method of display, helps protect the states from changes to the
 	 * way the system utilizes the state changes
 	 */
-	public void showTrainStopped() {
-		display.showTrainStopped();
+	public void showTrainStopped(int time) {
+		trainDisplay.showTrainStopped(time);
 	}
 	
 	/**
@@ -197,7 +164,7 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showDoorOpened() {
-		display.showDoorOpened();
+		trainDisplay.showDoorOpened();
 	}
 	
 	/**
@@ -205,7 +172,7 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showDoorClosed() {
-		display.showDoorClosed();
+		trainDisplay.showDoorClosed();
 	}
 	
 	/**
@@ -213,7 +180,7 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showDoorOpening() {
-		display.showDoorOpening();
+		trainDisplay.showDoorOpening();
 	}
 	
 	/**
@@ -221,7 +188,7 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showDoorClosing() {
-		display.showDoorClosing();
+		trainDisplay.showDoorCLosing();
 	}
 	
 	/**
@@ -229,10 +196,8 @@ public class TrainStateContext {
 	 * way the system utilizes the state changes
 	 */
 	public void showDoorObstruction() {
-		display.showDoorObstruction();
+		trainDisplay.showDoorObstruction();
 	}
 
-	
-	
+		
 }
->>>>>>> 107ed7078eb35f2626886885453368a110c7b6d4
