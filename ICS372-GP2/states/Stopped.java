@@ -1,26 +1,32 @@
 package states;
 
-public class Stopped extends TrainState  {
+import timer.Notifiable;
+import timer.Timer;
+
+public class Stopped extends TrainState implements Notifiable {
 	private static Stopped instance;
 	
+	/**
+	 * Private constructor for the singleton pattern
+	 */
 	private Stopped() {
 		instance = this;
 	}
 	
 	public static Stopped getInstance() {
-		// TODO Auto-generated method stub
+		if (instance == null) {
+			instance = new Stopped();
+		}
 		return instance;
 	}
 	
 	@Override
 	public void enter() {
-		// TODO Auto-generated method stub
-		
+		TrainStateContext.getInstance().showTrainStopped();
 	}
 	@Override
 	public void exit() {
-		// TODO Auto-generated method stub
-		
+		TrainStateContext.getInstance().showTrainAcceralting();
 	}
 	
 	/**
