@@ -26,13 +26,13 @@ public class DoorsClosing extends TrainState implements Notifiable{
 
 	@Override
 	public void enter() {
-//		some code
+		TrainStateContext.getInstance().showDoorClosing();
 
 	}
 
 	@Override
 	public void exit() {
-		//some code
+		TrainStateContext.getInstance().showDoorOpening();
 
 	}
 	
