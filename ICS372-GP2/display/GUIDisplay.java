@@ -5,18 +5,20 @@ import buttons.GUIButton;
 import buttons.StationReachedButton;
 import buttons.StationReachingButton;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class GUIDisplay extends Application implements TrainDisplay {
 	private GUIButton doorObstructing;
 	private GUIButton stationReached;
 	private GUIButton stationReaching;
-	private Text trainStatus;
-	private Text doorStatus;
+	private Text trainStatus = new Text("train stopped");
+	private Text doorStatus = new Text("Door Closed");
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -35,11 +37,16 @@ public class GUIDisplay extends Application implements TrainDisplay {
 
 		Scene scene = new Scene(pane);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Microwave Version 2");
+		primaryStage.setTitle("Train simulator");
 		// TrainContext.getInstance().setDisplay(this);
 		// not yet done
 		primaryStage.show();
-
+		primaryStage.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, new EventHandler<WindowEvent>() {
+			@Override
+			public void handle(WindowEvent window) {
+				System.exit(0);
+			}
+		});
 	}
 //test
 
