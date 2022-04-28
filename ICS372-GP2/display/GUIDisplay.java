@@ -51,7 +51,7 @@ public class GUIDisplay extends Application implements TrainDisplay {
 //test
 
 	@Override
-	public void showTrainStopped(int time) {
+	public void showTrainStopped() {
 		// not yet done
 
 	}

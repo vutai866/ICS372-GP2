@@ -6,7 +6,7 @@ public interface TrainDisplay {
 	 * 
 	 * @param time remaining time
 	 */
-	public void showTrainStopped(int time);
+	public void showTrainStopped();
 
 	/**
 	 * Indicate that the train is speeding up

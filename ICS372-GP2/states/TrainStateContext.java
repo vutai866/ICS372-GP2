@@ -155,8 +155,8 @@ public class TrainStateContext {
 	 * Invokes right method of display, helps protect the states from changes to the
 	 * way the system utilizes the state changes
 	 */
-	public void showTrainStopped(int time) {
-		trainDisplay.showTrainStopped(time);
+	public void showTrainStopped() {
+		trainDisplay.showTrainStopped();
 	}
 	
 	/**
